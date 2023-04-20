@@ -8,26 +8,26 @@ if (date == 2050) {                                 // corrected the operator to
 	let date = 'April'                              // added the let 
 	console.log(date, 'Family Day')
 	console.log(date, 'Freedom Day')
-	count = count + 4                               // removed the let 
+	count =+ 4                               // removed the let 
 
 	if (status == "student") {                      // corrected the operator to ==
 	  console.log('June', 'Youth Day')
-	    count = count + 1                          
+	    count +=1                          
   }
 
 	console.log('August', 'Women’s Day')
 	console.log('September', 'Heritage Day')
 	date = 'December'
 	console.log(date, 'Day of Reconciliation')
-	count = count + 3                                // removed the let to not redefine a global const                         
+	count += 3                                // removed the let to not redefine a global const                         
 
 	if (status == "parent") {                       // corrected the operator to ==
 	  console.log(date, 'Christmas Day')
-	    count = count + 1                            // removed the let to not redefine a global cons
+	    count += 1                            // removed the let to not redefine a global cons
   }
 
 	console.log(date, 'Day of Goodwill')
-	count = count + 1                                // removed the let to not redefine a global cons
+	count += 1                                // removed the let to not redefine a global cons
 }
 
 console.log('Your status is:', status)
