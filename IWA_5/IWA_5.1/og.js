@@ -5,56 +5,51 @@ const BANNED_WARNING =
 const NONE_SELECTED = 0;
 
 //items//
-const shoes = 300 * 1;
+const shoes = 300 * 2;
 const toys = 100 * 5;
 const shirts = 150 * NONE_SELECTED;
 const batteries = 35 * 2;
 const pens = 5 * NONE_SELECTED;
 
 //changing variables//
-const location = "RSA";
+const location = "NAM";
 let currency = "$";
-let shipping = 800;
+let shipping = null;
 let customers = "1";
 
-//logic//
-
+//determine location
 if (location === "RSA") {
   shipping = 400;
   currency = "R";
-}
-
-if (location === "NAM") {
+} else if (location === "NAM") {
   shipping = 600;
   currency = "$";
+} else {
+  shipping = 800;
 }
 
-if (shoes + toys + batteries + pens + shirts > 1000 && location === "RSA") {
-  shipping = 0;
-}
+//calculate free shipping
 
-if (shoes + toys + batteries + pens + shirts > 60 && location === "NAM") {
-  shipping = 0;
+if (shoes + toys + batteries + pens + shirts > 1000 && 60) {
+  if (location === "NAM" || "RSA") {
+    shipping = 0;
+  }
 }
 
 if (shipping === 0 && customers > 1) {
   console.log(FREE_WARNING);
 }
 
-if (location === "NAM" || "RSA") {
-  console.log(
-    "price",
-    currency,
-    shoes + toys + batteries + pens + shirts,
-    "Shipping cost",
-    currency,
-    shipping,
-    "Total",
-    currency,
-    shoes + toys + batteries + pens + shirts + shipping
-  );
-}
-
-if (location === "NK") {
-  console.log(BANNED_WARNING);
-}
+location === "NK"
+  ? console.log(BANNED_WARNING)
+  : console.log(
+      "Price",
+      currency,
+      shoes + toys + batteries + pens + shirts,
+      "Shipping cost",
+      currency,
+      shipping,
+      "Total",
+      currency,
+      shoes + toys + batteries + pens + shirts + shipping
+    );
