@@ -31,10 +31,10 @@ if (location === "RSA") {
 
 //calculate free shipping
 if (shoes + toys + batteries + pens + shirts > 1000 && 60) {
-  if (location === "NAM" || "RSA") {
+  if (location === "NAM" || location === "RSA") {
     shipping = 0;
   } else {
-    shipping = 10; // this is not working as intended - if location is NAM or RSA then set shipping to 0 ELSE set shipping to 800 again
+    shipping = 800;
   }
 }
 
