@@ -1,12 +1,12 @@
-const leoName = "Leo";
+const leoName = " \n Leo";
 const leoSurname = "Musvaire";
 const leoBalance = "-9394";
 
-const sarahName = " \nSarah";
+const sarahName = " \n Sarah";
 const sarahSurname = "Kleinhans";
 const sarahBalance = "-4582.21000111";
 
-const divider = "\n----------------------------------";
+const divider = "\n-----------------------------------------";
 
 // Only change below this line
 
