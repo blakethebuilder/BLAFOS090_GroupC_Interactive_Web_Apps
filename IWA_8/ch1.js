@@ -4,7 +4,7 @@ const leoStreet = "Church St.";
 const leoPostal = "3105";
 const leoBalance = "-10";
 
-const sarahName = "Sarah";
+const sarahName = "\nSarah";
 const sarahSurname = "Kleinhans";
 const sarahBalance = "-4582.21000111";
 const sarahNumber = "13";
@@ -14,6 +14,7 @@ const sarahPostal = "0310";
 // Only change below this line
 
 const leo = {
+  //had to fix the : from = and add ,
   fullName: leoName,
   balance: leoBalance,
   accessId: "47afb389-8014-4d0b-aff3-e40203d2107f",
@@ -26,6 +27,7 @@ const leo = {
 };
 
 const sarah = {
+  //had to fix the : from = = and add ,
   fullName: sarahName + sarahSurname,
   age: 62,
   accessId: "6b279ae5-5657-4240-80e9-23f6b635f7a8",
