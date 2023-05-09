@@ -17,4 +17,4 @@ const sarah = `${sarahName} ${sarahSurname} (Owed R ${sarahBalance})`;
 const total = " \n\tTotal amount owed: R";
 const result = leo + sarah + divider + total + owed.toFixed(2) + divider; // to.fixed to get the decimal and this was
 
-console.log(result);
+console.log(result); // format the thousand characters

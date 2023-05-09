@@ -31,13 +31,9 @@ const tax = {
 
 const taxAsDecimal = parseFloat(tax["913"]) / 100; // To access an object property that starts with a number, you need to use square bracket notation instead of dot notation.
 const startingAfterTax = salary * (1 - taxAsDecimal);
-const type = size + lodging;
-if (type === "largeApartment") {
-}
+const type = size + "-" + lodging;
+//if (type === "largeApartment") {}
 const balance =
-  startingAfterTax -
-  expenses.food -
-  expenses.transport -
-  rent["large-apartment"];
+  startingAfterTax - expenses.food - expenses.transport - rent[type];
 
 console.log("R", balance.toFixed(2));
