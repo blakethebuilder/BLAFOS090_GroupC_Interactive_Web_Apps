@@ -63,64 +63,67 @@ copied = {
   }, //created a object and reallocated the name x-mas to no.6
 };
 
-correctDate;
+correctDate = copied[6].date;
 
-correctDate = {
-  hours: 0,
-  minutes: 0,
-};
-
-isEarlier = correctDate.date > holidays[6].date;
+isEarlier = correctDate < holidays[6].date;
 
 console.log("New date is earlier:", isEarlier);
 
 if (isEarlier == true) {
-  copied.date = correctDate;
+  copied[6].date = correctDate;
 }
 
-console.log("ID change:", holidays[6].id != copied.id);
+console.log("ID change:", holidays[6].id != copied[6].id);
 
-console.log(
-  "Name change:",
-  holidays[christmas].name != copied.name || copied.name
-);
+if (holidays[6].name != copied[6].name) {
+  console.log("Name change", copied[6].name);
+} else {
+  console.log("Name change:", holidays[6].name == copied[6].name);
+}
 
-console.log(
-  "Date change:",
-  holidays[christmas].date != copied.date || copied.date
-);
+if (holidays[6].date != copied[6].date) {
+  console.log("Date change", copied[6].date);
+} else {
+  console.log("Date change:", holidays[6].date == copied[6].date);
+}
 
-// // const firstHolidayTimestamp = Math.min(
-// //   holidays[0].date.getTime,
-// //   holidays[1].date.getTime,
-// //   holidays[2].date.getTime,
-// //   holidays[3].date.getTime,
-// //   holidays[4].date.getTime,
-// //   holidays[5].date.getTime,
-// //   holidays[6].date.getTime,
-// //   holidays[7].date.getTime,
-// //   holidays[8].date.getTime
-// // );
+// const firstHolidayTimestamp = Math.min(
+//   holidays[0].date.getTime(),
+//   holidays[1].date.getTime(),
+//   holidays[2].date.getTime(),
+//   holidays[3].date.getTime(),
+//   holidays[4].date.getTime(),
+//   holidays[5].date.getTime(),
+//   holidays[6].date.getTime(),
+//   holidays[7].date.getTime(),
+//   holidays[8].date.getTime()
+// );
 
-// // const lastHolidayTimestamp = Math.max(
-// //   holidays[0].date.getTime,
-// //   holidays[1].date.getTime,
-// //   holidays[2].date.getTime,
-// //   holidays[3].date.getTime,
-// //   holidays[4].date.getTime,
-// //   holidays[5].date.getTime,
-// //   holidays[6].date.getTime,
-// //   holidays[7].date.getTime,
-// //   holidays[8].date.getTime
-// // );
+// const lastHolidayTimestamp = {
+//   Math.max : {
+//     holidays[0].date.getTime(),
+//     holidays[1].date.getTime(),
+//     holidays[2].date.getTime(),
+//     holidays[3].date.getTime(),
+//     holidays[4].date.getTime(),
+//     holidays[5].date.getTime(),
+//     holidays[6].date.getTime(),
+//     holidays[7].date.getTime(),
+//     holidays[8].date.getTime(),
 
-// // const firstDay = firstHolidayTimestamp;
-// // const firstMonth = firstHolidayTimestamp.getMonth;
-// // const lastDay = lastHolidayTimestamp.getDate;
-// // const lastMonth = lastHolidayTimestamp.getMonth;
+//   }
 
-// // console.log(`${firstDay}/${firstMonth}/${currentYear}`);
-// // console.log(`${lastDay}/${lastMonth}/${currentYear}`);
+//   ;
+// }
+// ;
+
+// const firstDay = firstHolidayTimestamp;
+// const firstMonth = firstHolidayTimestamp.getMonth;
+// const lastDay = lastHolidayTimestamp.getDate;
+// const lastMonth = lastHolidayTimestamp.getMonth;
+
+// console.log(`${firstDay}/${firstMonth}/${currentYear}`);
+// console.log(`${lastDay}/${lastMonth}/${currentYear}`);
 
 // // const randomHoliday = holidays[Math.random];
 // // console.log(randomHoliday);
