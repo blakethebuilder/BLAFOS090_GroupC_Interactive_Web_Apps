@@ -52,16 +52,20 @@ checkin1Element.textContent = statusData.canCheckIn ? "enabled" : "disabled";
 const book2 = document.querySelector("#book2");
 
 // Get the data value
-const status2Element = book1.querySelector(".status");
+const status2Element = book2.querySelector(".status");
 const status2 = status2Element.textContent;
+
+const reserve2Element = book2.querySelector(".reserve");
+const checkout2Element = book2.querySelector(".checkout");
+const checkin2Element = book2.querySelector(".checkin");
 
 // Update styles and enable/disable buttons based on the status
 const statusData2 = STATUS_MAP[status2];
 
-status2Element.style.color = statusData.color;
-reserve2Element.textContent = statusData.canReserve ? "enabled" : "disabled";
-checkout2Element.textContent = statusData.canCheckout ? "enabled" : "disabled";
-checkin2Element.textContent = statusData.canCheckIn ? "enabled" : "disabled";
+status2Element.style.color = statusData2.color;
+reserve2Element.textContent = statusData2.canReserve ? "enabled" : "disabled";
+checkout2Element.textContent = statusData2.canCheckout ? "enabled" : "disabled";
+checkin2Element.textContent = statusData2.canCheckIn ? "enabled" : "disabled";
 
 // Select the book via ID
 const book3 = document.querySelector("#book3");
@@ -70,10 +74,14 @@ const book3 = document.querySelector("#book3");
 const status3Element = book1.querySelector(".status");
 const status3 = status2Element.textContent;
 
+const reserve3Element = book3.querySelector(".reserve");
+const checkout3Element = book3.querySelector(".checkout");
+const checkin3Element = book3.querySelector(".checkin");
+
 // Update styles and enable/disable buttons based on the status
 const statusData3 = STATUS_MAP[status2];
 
 status3Element.style.color = statusData.color;
-reserve3Element.textContent = statusData.canReserve ? "enabled" : "disabled";
-checkout3Element.textContent = statusData.canCheckout ? "enabled" : "disabled";
-checkin3Element.textContent = statusData.canCheckIn ? "enabled" : "disabled";
+reserve3Element.textContent = statusData3.canReserve ? "enabled" : "disabled";
+checkout3Element.textContent = statusData3.canCheckout ? "enabled" : "disabled";
+checkin3Element.textContent = statusData3.canCheckIn ? "enabled" : "disabled";
