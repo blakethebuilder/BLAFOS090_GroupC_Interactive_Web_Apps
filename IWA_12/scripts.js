@@ -27,61 +27,49 @@ const STATUS_MAP = {
   },
 };
 
-// Edit below line
+//Edit below the line
 
-// Select the book via ID
+// Select book1 and update its status and buttons
 const book1 = document.querySelector("#book1");
-
-// Get the data value
 const status1Element = book1.querySelector(".status");
+const reserve1Button = book1.querySelector(".reserve");
+const checkout1Button = book1.querySelector(".checkout");
+const checkin1Button = book1.querySelector(".checkin");
+
 const status1 = status1Element.textContent;
+const statusData1 = STATUS_MAP[status1];
 
-const reserve1Element = book1.querySelector(".reserve");
-const checkout1Element = book1.querySelector(".checkout");
-const checkin1Element = book1.querySelector(".checkin");
+status1Element.style.color = statusData1.color;
+reserve1Button.disabled = !statusData1.canReserve;
+checkout1Button.disabled = !statusData1.canCheckout;
+checkin1Button.disabled = !statusData1.canCheckIn;
 
-// Update styles and enable/disable buttons based on the status
-const statusData = STATUS_MAP[status1];
-
-status1Element.style.color = statusData.color;
-reserve1Element.textContent = statusData.canReserve ? "enabled" : "disabled";
-checkout1Element.textContent = statusData.canCheckout ? "enabled" : "disabled";
-checkin1Element.textContent = statusData.canCheckIn ? "enabled" : "disabled";
-
-// Select the book via ID
+// Select book2 and update its status and buttons
 const book2 = document.querySelector("#book2");
-
-// Get the data value
 const status2Element = book2.querySelector(".status");
+const reserve2Button = book2.querySelector(".reserve");
+const checkout2Button = book2.querySelector(".checkout");
+const checkin2Button = book2.querySelector(".checkin");
+
 const status2 = status2Element.textContent;
-
-const reserve2Element = book2.querySelector(".reserve");
-const checkout2Element = book2.querySelector(".checkout");
-const checkin2Element = book2.querySelector(".checkin");
-
-// Update styles and enable/disable buttons based on the status
 const statusData2 = STATUS_MAP[status2];
 
 status2Element.style.color = statusData2.color;
-reserve2Element.textContent = statusData2.canReserve ? "enabled" : "disabled";
-checkout2Element.textContent = statusData2.canCheckout ? "enabled" : "disabled";
-checkin2Element.textContent = statusData2.canCheckIn ? "enabled" : "disabled";
+reserve2Button.disabled = !statusData2.canReserve;
+checkout2Button.disabled = !statusData2.canCheckout;
+checkin2Button.disabled = !statusData2.canCheckIn;
 
-// Select the book via ID
+// Select book3 and update its status and buttons
 const book3 = document.querySelector("#book3");
+const status3Element = book3.querySelector(".status");
+const reserve3Button = book3.querySelector(".reserve");
+const checkout3Button = book3.querySelector(".checkout");
+const checkin3Button = book3.querySelector(".checkin");
 
-// Get the data value
-const status3Element = book1.querySelector(".status");
-const status3 = status2Element.textContent;
+const status3 = status3Element.textContent;
+const statusData3 = STATUS_MAP[status3];
 
-const reserve3Element = book3.querySelector(".reserve");
-const checkout3Element = book3.querySelector(".checkout");
-const checkin3Element = book3.querySelector(".checkin");
-
-// Update styles and enable/disable buttons based on the status
-const statusData3 = STATUS_MAP[status2];
-
-status3Element.style.color = statusData.color;
-reserve3Element.textContent = statusData3.canReserve ? "enabled" : "disabled";
-checkout3Element.textContent = statusData3.canCheckout ? "enabled" : "disabled";
-checkin3Element.textContent = statusData3.canCheckIn ? "enabled" : "disabled";
+status3Element.style.color = statusData3.color;
+reserve3Button.disabled = !statusData3.canReserve;
+checkout3Button.disabled = !statusData3.canCheckout;
+checkin3Button.disabled = !statusData3.canCheckIn;
