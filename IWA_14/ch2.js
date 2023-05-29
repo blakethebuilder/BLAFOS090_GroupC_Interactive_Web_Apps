@@ -9,14 +9,11 @@ function multiply(a, b) {
 }
 
 function internal() {
-  const added = add(this.internal.a, this.internal.b);
-  const multiplied = multiply(this.internal.a, this.internal.b);
-  return {
-    added: console.log(added),
-    multiplied: console.log(multiplied),
-  };
+  const added = this.add(this.internal.a, this.internal.b);
+  const multiplied = this.multiply(this.internal.a, this.internal.b);
+  const exampleTotal = added * multiplied;
+  console.log(exampleTotal);
 }
-
 // Not allowed to change below this
 
 const example1 = {
