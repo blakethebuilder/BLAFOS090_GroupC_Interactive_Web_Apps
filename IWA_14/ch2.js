@@ -12,6 +12,7 @@ function internal() {
   const added = this.add(this.internal.a, this.internal.b);
   const multiplied = this.multiply(this.internal.a, this.internal.b);
   const exampleTotal = added * multiplied;
+
   console.log(exampleTotal);
 }
 // Not allowed to change below this
@@ -38,5 +39,5 @@ const example2 = {
   calculate: internal,
 };
 
-example1.calculate();
-example2.calculate();
+example1.calculate(); // 48
+example2.calculate(); // 16 - must be 12
