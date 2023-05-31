@@ -29,15 +29,16 @@ const result = [];
 // };
 
 const extractBiggest = () => {
-  if (first[1][first[1].length - 1] > second[1][second[1].length - 1]) {
-    return first;
-  }
+  const biggestArray = data.lists.reduce((prev, curr) => {
+    const prevLast = prev[1][prev[1].length - 1];
+    const currLast = curr[1][curr[1].length - 1];
+    return prevLast > currLast ? prev : curr;
+  })[1];
 
-  if (third[1].length < 1) {
-    return second;
-  }
+  result.push(...biggestArray);
+  biggestArray.length = 0;
 
-  return third;
+  return biggestArray;
 };
 
 // Only edit above
