@@ -10,35 +10,22 @@ const data = {
 
 // Only edit below
 
-const first = data.lists[0];
-const second = data.lists[1];
-const third = data.lists[2];
+const first = data.lists[0][1] || {};
+const second = data.lists[1][1] || {};
+const third = data.lists[2][1] || {};
 
 const result = [];
 
-// const extractBiggest = () => {
-//   if (first[data.lists.length - 1] > second[data.lists.length - 1]) {
-//     return first;
-//   }
-
-//   if (third[data.lists.length - 1] < 1) {
-//     return second;
-//   }
-
-//   return third;
-// };
-
 const extractBiggest = () => {
-  const biggestArray = data.lists.reduce((prev, curr) => {
-    const prevLast = prev[1][prev[1].length - 1];
-    const currLast = curr[1][curr[1].length - 1];
-    return prevLast > currLast ? prev : curr;
-  })[1];
+  if (first[data.lists.length - 1] > second[data.lists.length - 1]) {
+    return first;
+  }
 
-  result.push(...biggestArray);
-  biggestArray.length = 0;
+  if (third[data.lists.length - 1] < 1) {
+    return second;
+  }
 
-  return biggestArray;
+  return third;
 };
 
 // Only edit above
