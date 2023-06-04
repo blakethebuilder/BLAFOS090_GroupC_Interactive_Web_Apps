@@ -17,15 +17,23 @@ const third = data.lists[2][1] || {};
 const result = [];
 
 const extractBiggest = () => {
-  if (first[data.lists.length - 1] > second[data.lists.length - 1]) {
-    return first;
+  if (first[first.length - 1] > second[second.length - 1]) {
+    const item = second[second.length - 1];
+    second.pop();
+    return item;
+  } else if (first[first.length - 1] < second[second.length - 1]) {
+    const item = first[first.length - 1];
+    first.pop();
+    return item;
+  } else if (third[third.length - 1] < second[second.length - 1]) {
+    const item = second[second.length - 1];
+    second.pop();
+    return item;
+  } else {
+    const item = third[third.length - 1];
+    third.pop();
+    return item;
   }
-
-  if (third[data.lists.length - 1] < 1) {
-    return second;
-  }
-
-  return third;
 };
 
 // Only edit above
