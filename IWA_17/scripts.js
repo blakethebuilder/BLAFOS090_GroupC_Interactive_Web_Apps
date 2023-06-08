@@ -22,9 +22,10 @@ const getDaysInMonth = (date) =>
 
 const createArray = (length) => {
   const result = [];
+  let counter = 0;
 
-  for (let i = 0; i < length; i++) {
-    result.push(i);
+  while (result.length < length) {
+    result.push(counter++);
   }
 
   return result;
@@ -37,7 +38,7 @@ const createData = () => {
   const startDay = current.getDay();
   const daysInMonth = getDaysInMonth(current);
 
-  const weeks = createArray(5);
+  const weeks = createArray(Math.ceil(daysInMonth / 7));
   const days = createArray(7);
   const result = [];
 
@@ -83,21 +84,22 @@ const createHtml = (data) => {
 
     for (const { dayOfWeek, value } of days) {
       const isToday = new Date().getDate() === value;
-      const isWeekend = (dayOfWeek === 6) | (dayOfWeek === 0);
+      const isWeekend = dayOfWeek === 6 || dayOfWeek === 0;
       const isAlternate = week % 2 === 0;
 
       let classString = "table__cell";
 
-      if (isToday) classString = `${classString} table__cell_`;
-      if (isWeekend) classString = `${classString} table__cell_`;
-      if (isAlternate) classString = `${classString} table__cell_`;
+      if (isToday) classString += " table__cell_today";
+      if (isWeekend) classString += " table__cell_weekend";
+      if (isAlternate) classString += " table__cell_alternate";
+
       inner = addCell(inner, classString, value);
     }
 
     result += `
-            ${result}
-            <tr>${inner}</tr>
-        `;
+      
+    <tr>${inner}</tr>
+`;
   }
 
   return result;
